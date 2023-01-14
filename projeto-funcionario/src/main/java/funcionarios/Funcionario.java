@@ -1,3 +1,5 @@
+package funcionarios;
+
 import lombok.Getter;
 
 public class Funcionario {

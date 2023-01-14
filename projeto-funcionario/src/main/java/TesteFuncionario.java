@@ -1,4 +1,6 @@
-import javax.sound.midi.SysexMessage;
+import funcionarios.Diretor;
+import funcionarios.Funcionario;
+import funcionarios.Gerente;
 
 public class TesteFuncionario {
     public static void main (String args[]){
@@ -6,33 +8,11 @@ public class TesteFuncionario {
         Gerente marcos = new Gerente("Marcos", "34987711168", 8000);
         Diretor eva = new Diretor("Eva", "34506330315", 10000);
 
-        System.out.println("--------------------------------------------");
-        System.out.println("A seguir serão apresentados os dados do Funcionário");
-        System.out.println("Nome: "+ lucas.getNome());
-        System.out.println("Cpf: " + lucas.getCpf());
-        System.out.println("Salario: "+ lucas.getSalario());
-        System.out.println("Bonificacao: "+lucas.getBonificacao());
-        System.out.println("--------------------------------------------");
+        ListaFuncionario lista = new ListaFuncionario();
 
-        System.out.println();
-
-        System.out.println("--------------------------------------------");
-        System.out.println("A seguir serão apresentados os dados do Gerente");
-        System.out.println("Nome: "+ marcos.getNome());
-        System.out.println("Cpf: " + marcos.getCpf());
-        System.out.println("Salario: "+ marcos.getSalario());
-        System.out.println("Bonificacao: "+ marcos.getBonificacao());
-        System.out.println("--------------------------------------------");
-
-        System.out.println();
-
-        System.out.println("--------------------------------------------");
-        System.out.println("A seguir serão apresentados os dados do Diretor");
-        System.out.println("Nome: "+ eva.getNome());
-        System.out.println("Cpf: " + eva.getCpf());
-        System.out.println("Salario: "+ eva.getSalario());
-        System.out.println("Bonificacao: "+eva.getBonificacao());
-        System.out.println("--------------------------------------------");
+        lista.listaFuncionario(lucas);
+        lista.listaFuncionario(marcos);
+        lista.listaFuncionario(eva);
 
         ControleBonificacao controleBonificacao = new ControleBonificacao();
         controleBonificacao.registraBonificacao(lucas);

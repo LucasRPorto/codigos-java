@@ -1,3 +1,4 @@
+import funcionarios.Funcionario;
 import lombok.Getter;
 
 public class ControleBonificacao {
