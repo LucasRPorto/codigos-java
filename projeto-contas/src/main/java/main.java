@@ -1,8 +1,16 @@
 public class main {
     public static void main(String[]args){
 
-        Cliente lucas = new Cliente();
+        ContaCorrente cc = new ContaCorrente("0001", "45678-9", 200);
+        ContaPoupanca cp = new ContaPoupanca("0002", "12345-6", 100);
+        cc.depositaValor(100);
+        cp.depositaValor(100);
+        cc.transfereValor(cp,100);
 
+        System.out.println("O valor da conta cc é: "+cc.getSaldo());
+        System.out.println("O valor da conta cp é: "+cp.getSaldo());
+
+        cc.sacaValor(100);
     }
 }
 

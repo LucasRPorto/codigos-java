@@ -1,4 +1,4 @@
-public class Cliente extends Conta{
+public class Cliente {
 
     private String nome;
     private String cpf;

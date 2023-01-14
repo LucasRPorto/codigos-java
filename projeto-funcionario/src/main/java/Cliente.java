@@ -1,15 +1,10 @@
-package funcionarios;
+import funcionarios.Autenticacao;
 
-public class Diretor extends Funcionario implements Autenticacao{
+public class Cliente implements Autenticacao {
     private int senha;
 
-    public Diretor(String nome, String cpf, double salario) {
-        super(nome, cpf, salario);
-    }
-
-    @Override
-    public double getBonificacao() {
-        return super.getSalario() + 500;
+    public Cliente(int senha){
+        this.senha = senha;
     }
 
     @Override

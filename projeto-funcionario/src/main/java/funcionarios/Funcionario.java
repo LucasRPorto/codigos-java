@@ -2,7 +2,8 @@ package funcionarios;
 
 import lombok.Getter;
 
-public class Funcionario {
+// Classe abstrata, não posso mais instanciar funcionarios, apenas seus filhos (gerente, diretor...)
+public abstract class Funcionario {
     @Getter
     private String nome;
     @Getter
@@ -15,8 +16,6 @@ public class Funcionario {
         this.cpf = cpf;
         this.salario = salario;
     }
-
-    public double getBonificacao(){
-        return this.salario * 0.1;
-    }
+    //Metodo sem corpo, sem implementações aqui, apenas nos filhos. Os filhos devem ter o método
+    public abstract double getBonificacao();
 }

@@ -7,6 +7,11 @@ public class Conta {
     @Getter
     private double saldo;
 
+    public Conta(String agencia, String conta, double saldo){
+        this.agencia = agencia;
+        this.conta = conta;
+        this.saldo = saldo;
+    }
 
     public void depositaValor(double valor){
         this.saldo = this.saldo + valor;
