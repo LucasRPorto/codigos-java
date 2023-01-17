@@ -16,5 +16,7 @@ public class Cliente implements Autenticacao {
             System.out.println("A senha está incorreta");
             return false;
         }
+
     }
 }
+
