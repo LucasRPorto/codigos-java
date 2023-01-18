@@ -32,7 +32,7 @@ public class Conta {
     public void transfereValor(Conta contaParametro, float valor){
 
         this.sacaValor(valor);
-        this.depositaValor(valor);
+        contaParametro.depositaValor(valor);
         System.out.println("Valor de R$ "+valor+ " transferido com sucesso!");
         System.out.println("Saldo atual R$ "+ this.saldo);
     }

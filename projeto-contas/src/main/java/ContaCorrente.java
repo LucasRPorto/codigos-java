@@ -11,7 +11,7 @@ public class ContaCorrente extends Conta {
             super.sacaValor(valor + this.taxaSaca);
         }catch (SaldoInsuficienteException ex){
             System.out.println(ex.getMessage());
-            System.out.println(ex.getStackTrace());
+            ex.printStackTrace();
         }
 
     }
