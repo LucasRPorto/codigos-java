@@ -6,12 +6,7 @@ public class ContaPoupanca extends Conta {
     }
 
     @Override
-    public void sacaValor(double valor) {
-        try{
+    public void sacaValor(double valor) throws HorarioExcedidoException{
             super.sacaValor(valor + this.taxaSaca);
-        }catch (SaldoInsuficienteException ex){
-            System.out.println(ex.getMessage());
-            ex.printStackTrace();
-        }
     }
 }

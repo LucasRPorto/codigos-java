@@ -3,20 +3,16 @@ public class main {
 
         ContaCorrente cc = new ContaCorrente("0001", "45678-9", 200);
         ContaPoupanca cp = new ContaPoupanca("0002", "12345-6", 100);
-        cc.depositaValor(100);
-        cp.depositaValor(100);
-        cc.transfereValor(cp,100);
 
-        System.out.println("O valor da conta cc é: "+cc.getSaldo());
-        System.out.println("O valor da conta cp é: "+cp.getSaldo());
 
-        cc.sacaValor(100);
+        try{
+            cc.sacaValor(100);
+        }catch (SaldoInsuficienteException | HorarioExcedidoException ex){
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+        }
 
-        cc.sacaValor(10);
-
-        cc.sacaValor(20);
-
-        cc.sacaValor(100);
+        System.out.println("O código continuou após a exception");
     }
 }
 
