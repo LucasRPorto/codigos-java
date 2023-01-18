@@ -1,4 +1,4 @@
-public class ContaCorrente extends Conta{
+public class ContaCorrente extends Conta {
 
     private double taxaSaca = 0.2;
     public ContaCorrente(String agencia, String conta, double saldo) {
@@ -7,6 +7,12 @@ public class ContaCorrente extends Conta{
 
     @Override
     public void sacaValor(double valor) {
-        super.sacaValor(valor + this.taxaSaca);
+        try{
+            super.sacaValor(valor + this.taxaSaca);
+        }catch (SaldoInsuficienteException ex){
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getStackTrace());
+        }
+
     }
 }

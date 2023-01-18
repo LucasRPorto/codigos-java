@@ -11,6 +11,12 @@ public class main {
         System.out.println("O valor da conta cp é: "+cp.getSaldo());
 
         cc.sacaValor(100);
+
+        cc.sacaValor(10);
+
+        cc.sacaValor(20);
+
+        cc.sacaValor(100);
     }
 }
 

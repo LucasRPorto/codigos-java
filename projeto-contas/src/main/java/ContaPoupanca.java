@@ -1,4 +1,4 @@
-public class ContaPoupanca extends Conta{
+public class ContaPoupanca extends Conta {
 
     private double taxaSaca = 0.1;
     public ContaPoupanca(String agencia, String conta, double saldo) {
