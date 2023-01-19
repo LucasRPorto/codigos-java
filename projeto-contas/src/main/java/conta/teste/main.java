@@ -1,9 +1,15 @@
+package conta.teste;
+
+import conta.modelo.SaldoInsuficienteException;
+import conta.modelo.ContaCorrente;
+import conta.modelo.ContaPoupanca;
+import conta.modelo.HorarioExcedidoException;
+
 public class main {
     public static void main(String[]args){
 
         ContaCorrente cc = new ContaCorrente("0001", "45678-9", 200);
         ContaPoupanca cp = new ContaPoupanca("0002", "12345-6", 100);
-
 
         try{
             cc.sacaValor(100);
@@ -11,7 +17,6 @@ public class main {
             System.out.println(ex.getMessage());
             ex.printStackTrace();
         }
-
         System.out.println("O código continuou após a exception");
     }
 }
@@ -30,8 +35,8 @@ String agenciaBradesco = "1445";
     String contaCaixa = "546739-1";
     double saldoCaixa = 600;
 
-    Conta bradesco = new Conta();
-    Conta caixa = new Conta();
+    modelo.Conta bradesco = new modelo.Conta();
+    modelo.Conta caixa = new modelo.Conta();
 
     bradesco.conta= contaBradesco;
     bradesco.saldo=saldoBradesco;

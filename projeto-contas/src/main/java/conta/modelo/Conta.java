@@ -1,7 +1,6 @@
+package conta.modelo;
 import lombok.Getter;
-
 import java.util.Calendar;
-import java.util.Date;
 
 public class Conta {
 
@@ -21,7 +20,7 @@ public class Conta {
         System.out.println("Valor atualizado com sucesso! Saldo atual: " + this.saldo );
     }
 
-    public void sacaValor(double valor) throws HorarioExcedidoException{
+    public void sacaValor(double valor) throws HorarioExcedidoException {
 
         Calendar data = Calendar.getInstance();
         int hora = data.get(Calendar.HOUR_OF_DAY);
