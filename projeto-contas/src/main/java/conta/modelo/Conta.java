@@ -1,4 +1,11 @@
 package conta.modelo;
+
+/**
+ * @author Lucas
+ * Classe utilizada para representar a entidade conta. Todas novas contas devem estar a presente classe.
+ * A classe implementa os métodos de saque, depósito e transferência.
+ */
+
 import lombok.Getter;
 import java.util.Calendar;
 
@@ -20,6 +27,11 @@ public class Conta {
         System.out.println("Valor atualizado com sucesso! Saldo atual: " + this.saldo );
     }
 
+    /**
+     *
+     * Necessário que o horário de saque esteja entre 07h e 20h
+     * Necessário que o valor para saque seja menor ou igual que o valor disponível na conta;
+     */
     public void sacaValor(double valor) throws HorarioExcedidoException {
 
         Calendar data = Calendar.getInstance();
