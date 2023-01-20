@@ -11,4 +11,9 @@ public class ContaPoupanca extends Conta {
     public void sacaValor(double valor) throws HorarioExcedidoException {
             super.sacaValor(valor + this.taxaSaca);
     }
+
+    @Override
+    public String toString(){
+        return "Conta Poupanca: "+ super.toString();
+    }
 }

@@ -12,6 +12,7 @@ import java.util.Calendar;
 public class Conta {
 
     private String agencia;
+    @Getter
     private String conta;
     @Getter
     private double saldo;
@@ -53,5 +54,10 @@ public class Conta {
         contaParametro.depositaValor(valor);
         System.out.println("Valor de R$ "+valor+ " transferido com sucesso!");
         System.out.println("Saldo atual R$ "+ this.saldo);
+    }
+
+    @Override
+    public String toString(){
+        return "Conta - "+ this.conta;
     }
 }

@@ -18,6 +18,21 @@ public class main {
             ex.printStackTrace();
         }
         System.out.println("O código continuou após a exception");
+
+        String nome = "LucAaAs";
+        nome = nome.replace("A", "a");
+        System.out.println("Nome após replace: "+nome);
+
+        println("Lucas");
+        println(cc);
+        println(cp);
+        println(4);
+
+    }
+
+    public static void println(Object obj){
+
+        System.out.println(obj.toString());
     }
 }
 
