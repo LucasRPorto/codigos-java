@@ -1,6 +1,8 @@
 package conta.teste;
 
 import conta.cliente.Cliente;
+import conta.cliente.ListaClientes;
+import conta.cliente.PosicaoListaClienteInvalida;
 
 public class TesteEstruturas {
     public static void main(String[] args){
@@ -11,10 +13,24 @@ public class TesteEstruturas {
         Cliente marcos = new Cliente("Marcos Manoel", "34987711168","Policial");
         Cliente fernando = new Cliente("Fernando Silva", "34506330315","Professor");
 
-        clientes[0]= lucas;
-        clientes[1] = marcos;
-        clientes[2] = fernando;
+        ListaClientes listaClientes = new ListaClientes();
 
-        System.out.println(clientes[2].getNome());
+        listaClientes.adiciona(lucas);
+        listaClientes.adiciona(marcos);
+        listaClientes.adiciona(fernando);
+
+        try{
+            String nomeCliente = listaClientes.getCliente(3).getNome();
+            System.out.println(nomeCliente);
+        }catch (PosicaoListaClienteInvalida ex){
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+        }
+        testeCatch();
+        System.out.println("Quantidade de Clientes Cadastrados: "+listaClientes.getQuantidadeClientes());
+    }
+
+    public static void testeCatch(){
+        System.out.println("Lista Continuou Após Listagem");
     }
 }
