@@ -20,7 +20,7 @@ public class TesteEstruturas {
         listaClientes.adiciona(fernando);
 
         try{
-            String nomeCliente = listaClientes.getCliente(3).getNome();
+            String nomeCliente = listaClientes.getCliente(1).getNome();
             System.out.println(nomeCliente);
         }catch (PosicaoListaClienteInvalida ex){
             System.out.println(ex.getMessage());
