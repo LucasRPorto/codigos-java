@@ -18,4 +18,14 @@ public class Cliente {
         this.profissao = profissao;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        Cliente cliente = (Cliente) obj;
+        return ((this.nome == cliente.getNome()) && (this.cpf == cliente.getCpf()) && (this.profissao == cliente.profissao));
+    }
+
+    @Override
+    public String toString() {
+        return this.nome + " - " + this.cpf;
+    }
 }
