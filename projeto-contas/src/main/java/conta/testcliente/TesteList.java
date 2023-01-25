@@ -20,11 +20,20 @@ public class TesteList {
         listaClientes.add(fernando);
         listaClientes.add(clayton);
 
-        Comparador comparador = new Comparador();
-
         System.out.println("ORDENANDO OS CLIENTES DE ACORDO COM A IDADE");
         System.out.println("--------------------------------------------");
-        listaClientes.sort(comparador);
+        listaClientes.sort(new ComparadorIdade());
+
+        for(Cliente list : listaClientes){
+            System.out.println(list.getNome()+" - "+list.getIdade());
+        }
+
+        System.out.println();
+
+
+        System.out.println("ORDENANDO OS CLIENTES DE ACORDO COM O NOME");
+        System.out.println("--------------------------------------------");
+        listaClientes.sort(new ComparadorNome());
 
         for(Cliente list : listaClientes){
             System.out.println(list.getNome()+" - "+list.getIdade());
@@ -32,16 +41,19 @@ public class TesteList {
     }
 }
 
-class Comparador implements Comparator<Cliente>{
+class ComparadorIdade implements Comparator<Cliente>{
 
     @Override
     public int compare(Cliente o1, Cliente o2) {
-        if(o1.getIdade() < o2.getIdade()){
-            return -1;
-        }
-        else if(o1.getIdade() > o2.getIdade()){
-            return 1;
-        }
-        return 0;
+
+        return Integer.compare(o1.getIdade(), o2.getIdade());
+    }
+}
+
+class ComparadorNome implements Comparator<Cliente>{
+
+    @Override
+    public int compare(Cliente o1, Cliente o2) {
+        return o1.getNome().compareTo(o2.getNome());
     }
 }
