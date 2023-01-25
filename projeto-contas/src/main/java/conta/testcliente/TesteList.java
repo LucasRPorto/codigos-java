@@ -24,48 +24,22 @@ public class TesteList {
 
         System.out.println("ORDENANDO OS CLIENTES DE ACORDO COM A IDADE");
         System.out.println("--------------------------------------------");
-
+        
         listaClientes.sort((o1, o2) -> Integer.compare(o1.getIdade(), o2.getIdade()));
-
-        for(Cliente list : listaClientes){
-            System.out.println(list.getNome()+" - "+list.getIdade());
-        }
+        listaClientes.forEach((cliente) -> System.out.println(cliente.getNome()+" - "+cliente.getIdade()));
 
         System.out.println();
         System.out.println("ORDENANDO OS CLIENTES DE ACORDO COM O NOME");
         System.out.println("--------------------------------------------");
 
         listaClientes.sort((o1, o2) ->  o1.getNome().compareTo(o2.getNome()));
-
-        for(Cliente list : listaClientes){
-            System.out.println(list.getNome()+" - "+list.getIdade());
-        }
+        listaClientes.forEach((cliente) -> System.out.println(cliente.getNome() +" - " + cliente.getIdade()));
 
         System.out.println();
         System.out.println("EMBARALHANDO OS CLIENTES ");
         System.out.println("--------------------------------------------");
 
         Collections.shuffle(listaClientes);
-
-        for(Cliente list : listaClientes){
-            System.out.println(list.getNome()+" - "+list.getIdade());
-        }
+        listaClientes.forEach((cliente -> System.out.println(cliente.getNome() +" - "+ cliente.getIdade())));
     }
 }
-
-//class ComparadorIdade implements Comparator<Cliente>{
-//
-//    @Override
-//    public int compare(Cliente o1, Cliente o2) {
-//
-//        return Integer.compare(o1.getIdade(), o2.getIdade());
-//    }
-//}
-
-//class ComparadorNome implements Comparator<Cliente>{
-//
-//    @Override
-//    public int compare(Cliente o1, Cliente o2) {
-//        return o1.getNome().compareTo(o2.getNome());
-//    }
-//}
