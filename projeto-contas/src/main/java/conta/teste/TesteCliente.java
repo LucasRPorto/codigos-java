@@ -5,7 +5,7 @@ import conta.cliente.ValidaCPF;
 
 public class TesteCliente {
     public static void main(String[] args) {
-        Cliente lucas = new Cliente("Lucas Porto", "34506330315", "Analista de Desenvolvimento");
+        Cliente lucas = new Cliente("Lucas Porto", "34506330315", "Analista de Desenvolvimento",24);
 
         ValidaCPF.imprimeCPF(lucas.getCpf());
     }

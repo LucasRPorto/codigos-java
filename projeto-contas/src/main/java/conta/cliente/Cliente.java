@@ -10,12 +10,15 @@ public class Cliente {
     @Getter
     private String cpf;
     private String profissao;
+    @Getter
+    private int idade;
 
 
-    public Cliente(String nome, String cpf, String profissao){
+    public Cliente(String nome, String cpf, String profissao, int idade){
         this.nome = nome;
         this.cpf = cpf;
         this.profissao = profissao;
+        this.idade = idade;
     }
 
     @Override
