@@ -24,7 +24,7 @@ public class TesteList {
 
         System.out.println("ORDENANDO OS CLIENTES DE ACORDO COM A IDADE");
         System.out.println("--------------------------------------------");
-        
+
         listaClientes.sort((o1, o2) -> Integer.compare(o1.getIdade(), o2.getIdade()));
         listaClientes.forEach((cliente) -> System.out.println(cliente.getNome()+" - "+cliente.getIdade()));
 
