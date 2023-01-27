@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class Principal {
+public class TesteStream {
     public static void main(String[] args) {
         Curso matematica = new Curso("Matemática", 64, "Renato");
         Curso portugues = new Curso("Portugues", 64, "Fernanda");
@@ -29,11 +30,24 @@ public class Principal {
 
         System.out.println();
         System.out.println("Cursos com mais de 2 alunos:");
-        cursos.stream().filter(curso -> curso.qtdAlunos()>=2).forEach(curso -> System.out.println(curso.getNome()));
+        cursos.stream()
+                .filter(curso -> curso.qtdAlunos()>=2)
+                .collect(Collectors.toMap(c -> c.getNome(), c-> c.qtdAlunos()))
+                        .forEach((nome,alunos) -> System.out.println(nome + " possui "+alunos+" alunos matriculados"));
 
         System.out.println();
         System.out.println("Soma da carga total dos cursos de 64h:");
-        int somaCarga = cursos.stream().filter(curso -> curso.getCarga() == 64).mapToInt(Curso::getCarga).sum();
+        int somaCarga = cursos.stream()
+                .filter(curso -> curso.getCarga() == 64)
+                .mapToInt(Curso::getCarga).sum();
         System.out.println(somaCarga);
+
+        System.out.println();
+        System.out.println("Se existir algum curso com mais de 2 alunos, liste, caso contrário faça nada");
+        cursos.stream()
+                .filter(c -> c.qtdAlunos() >=2)
+                .findAny()
+                .ifPresent(c -> System.out.println(c.getNome()));
+
     }
 }
