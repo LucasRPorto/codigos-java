@@ -1,10 +1,13 @@
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class Curso {
-
+    @Getter
     private String nome;
+    @Getter
     private Integer carga;
     private List<Aluno> alunos;
 
@@ -25,6 +28,9 @@ public class Curso {
 
     public void listaAlunos(){
         alunos.sort((aluno1, aluno2) -> aluno1.getNome().compareTo(aluno2.getNome()));
-        alunos.forEach(aluno -> System.out.println(aluno.getNome()));
+        alunos.forEach(System.out::println);
+    }
+    public int qtdAlunos(){
+        return this.alunos.size();
     }
 }

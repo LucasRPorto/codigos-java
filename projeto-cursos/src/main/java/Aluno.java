@@ -9,4 +9,9 @@ public class Aluno{
         this.nome = nome;
         this.matricula = matricula;
     }
+
+    @Override
+    public String toString() {
+        return this.nome + " - " + this.matricula;
+    }
 }
