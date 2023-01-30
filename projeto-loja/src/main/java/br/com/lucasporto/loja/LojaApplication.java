@@ -1,7 +1,6 @@
 package br.com.lucasporto.loja;
 
 import br.com.lucasporto.loja.impostos.CalculadoraDeImpostos;
-import br.com.lucasporto.loja.impostos.TipoImposto;
 import br.com.lucasporto.loja.orcamento.Orcamento;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
