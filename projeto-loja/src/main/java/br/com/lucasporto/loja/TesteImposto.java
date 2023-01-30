@@ -13,5 +13,6 @@ public class TesteImposto {
         CalculadoraDeImpostos calculadora = new CalculadoraDeImpostos();
 
         System.out.println("Imposto = "+ calculadora.calcula(orcamento, TipoImposto.ICMS));
+        //teste
     }
 }
