@@ -14,5 +14,8 @@ public class TesteImposto {
         CalculadoraDeImpostos calculadora = new CalculadoraDeImpostos();
 
         System.out.println("Imposto = "+ calculadora.calcula(orcamento, new ISS()));
+
+        orcamento.aplicarDesconto("APROVADO");
+        System.out.println(orcamento.getValor());
     }
 }
