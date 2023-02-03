@@ -15,7 +15,15 @@ public class TesteImposto {
 
         System.out.println("Imposto = "+ calculadora.calcula(orcamento, new ISS()));
 
-        orcamento.aplicarDesconto("APROVADO");
-        System.out.println(orcamento.getValor());
+        orcamento.aplicarDesconto();
+        System.out.println("Situação atual: "+ orcamento.getSituacao()+ " Valor: "+ orcamento.getValor());
+
+        orcamento.aprovar();
+        orcamento.aplicarDesconto();
+        System.out.println("Situação atual: "+ orcamento.getSituacao()+ " Valor: "+ orcamento.getValor());
+
+        orcamento.reprovar();
+        orcamento.aplicarDesconto();
+        System.out.println("Situação atual: "+ orcamento.getSituacao()+ " Valor: "+ orcamento.getValor());
     }
 }
