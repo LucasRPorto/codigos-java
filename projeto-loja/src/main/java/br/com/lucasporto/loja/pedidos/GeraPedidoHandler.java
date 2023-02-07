@@ -5,22 +5,20 @@ import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class GeraPedidoHandler {
     GeraPedido pedido;
+    private List<AcaoAposPedido> acoes;
 
-    // Construtor com injecao de dependencias
-
-    public GeraPedidoHandler(GeraPedido pedido){
-        this.pedido = pedido;
-        execute(pedido);
+    public GeraPedidoHandler(List<AcaoAposPedido> acoes){
+        this.acoes = acoes;
     }
     public void execute(@NotNull GeraPedido dados){
 
         Orcamento orcamento = new Orcamento(dados.getValorOrcamento());
         Pedido pedido = new Pedido(dados.getCliente(), LocalDateTime.now(),orcamento);
 
-        System.out.println("Salvar pedido no banco");
-        System.out.println("Enviar e-mail dos pedidos");
+        acoes.forEach(a -> a.executarAcao(pedido));
     }
 }
