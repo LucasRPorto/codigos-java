@@ -3,6 +3,8 @@ import funcionarios.Funcionario;
 import funcionarios.Gerente;
 import funcionarios.MinhaException;
 
+/* PROJETO PARA TESTAR EXCEPTIONS*/
+
 public class TesteFuncionario {
     public static void main (String args[]){
 /*        Funcionario lucas = new Gerente("Lucas", "70229792197", 2713.00);
