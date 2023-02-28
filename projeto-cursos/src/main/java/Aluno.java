@@ -1,12 +1,11 @@
 import lombok.Getter;
 
-public class Aluno{
+public class Aluno extends Pessoa{
     @Getter
-    private String nome;
     private Integer matricula;
 
     public Aluno(String nome, Integer matricula) {
-        this.nome = nome;
+        super.nome = nome;
         this.matricula = matricula;
     }
 
