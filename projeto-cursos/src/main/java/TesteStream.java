@@ -49,5 +49,10 @@ public class TesteStream {
                 .findAny()
                 .ifPresent(c -> System.out.println(c.getNome()));
 
+        System.out.println();
+        int i = 2;
+        int j = 4;
+        i -= j;
+        System.out.println("i += j : "+ i );
     }
 }
